@@ -1,0 +1,228 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #0f172a;
+  color: #f1f5f9;
+  min-height: 100vh;
+}
+
+/* ---------- Page layout ---------- */
+.app {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.muted {
+  color: #94a3b8;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  background: linear-gradient(90deg, #9333ea, #3b82f6);
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s, opacity 0.15s;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid #3b82f6;
+}
+
+.button-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+/* ---------- Home ---------- */
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.home-welcome {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.home-title {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+/* ---------- Quiz header + progress ---------- */
+.quiz-header {
+  margin-bottom: 1.5rem;
+}
+
+.quiz-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.progress {
+  height: 8px;
+  background: #1e293b;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #9333ea, #3b82f6);
+  transition: width 0.3s ease;
+}
+
+/* ---------- Question card ---------- */
+.card {
+  background: #1e293b;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.question-number {
+  color: #94a3b8;
+  margin-bottom: 0.5rem;
+}
+
+.question-text {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ---------- Answer choices ---------- */
+.answers {
+  display: grid;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.answer {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+  text-align: left;
+  background: #0f172a;
+  color: inherit;
+  border: 2px solid #334155;
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, transform 0.15s;
+}
+
+.answer:hover {
+  border-color: #3b82f6;
+  transform: translateX(4px);
+}
+
+.answer.selected {
+  border-color: #9333ea;
+  background: #2e1065;
+}
+
+.answer-letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: #334155;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.answer.selected .answer-letter {
+  background: #9333ea;
+}
+
+/* ---------- Result / score display ---------- */
+.result-card h2 {
+  font-size: 1.8rem;
+  margin: 0.3rem 0 1rem;
+}
+
+.score-box {
+  background: #334155;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.stats {
+  list-style: none;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.stats li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid #334155;
+}
+
+.good {
+  color: #4ade80;
+}
+
+.bad {
+  color: #f87171;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 480px) {
+  .home-welcome {
+    font-size: 1.5rem;
+  }
+  .home-title {
+    font-size: 2.2rem;
+  }
+  .card {
+    padding: 1.2rem;
+  }
+  .question-text {
+    font-size: 1.15rem;
+  }
+  .btn {
+    width: 100%;
+  }
+}
